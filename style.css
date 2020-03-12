@@ -15,9 +15,6 @@ nav:not(.local) {
 }
 
 nav {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: nav;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -101,6 +98,17 @@ nav screen size
   }
 }
 
+/*==================================
+Footer
+==================================*/
+footer {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: footer;
+  width: 100vw;
+  background-color: rgba(34, 34, 34, 0.39);
+}
+
 main {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
@@ -111,9 +119,9 @@ main {
 .homePage .grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'nav nav nav' 'main main main';
-  -ms-grid-rows: auto auto;
-      grid-template-rows: auto auto;
+      grid-template-areas: 'nav nav nav' 'main main main' 'footer footer footer';
+  -ms-grid-rows: auto auto 100px;
+      grid-template-rows: auto auto 100px;
 }
 
 .homePage main {
@@ -144,14 +152,18 @@ main {
 .gamePage .grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'nav' 'localNav' 'main';
+      grid-template-areas: 'nav' 'localNav' 'main' 'footer';
+  -ms-grid-rows: auto auto auto 100px;
+      grid-template-rows: auto auto auto 100px;
 }
 
 @media screen and (min-width: 600px) {
   .gamePage .grid-container {
-        grid-template-areas: 'nav nav nav' 'localNav main main';
+        grid-template-areas: 'nav nav nav' 'localNav main main' 'footer footer footer';
     -ms-grid-columns: 250px auto auto;
         grid-template-columns: 250px auto auto;
+    -ms-grid-rows: auto auto 100px;
+        grid-template-rows: auto auto 100px;
   }
   .gamePage main section {
     width: 50%;

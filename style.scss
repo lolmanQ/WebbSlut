@@ -21,7 +21,6 @@ nav:not(.local){
 }
 
 nav{
-	grid-area: nav;
 	display: flex;
 	background-color: $colorNavFoot;
 	justify-content: center;
@@ -79,6 +78,14 @@ nav screen size
 
 
 
+/*==================================
+Footer
+==================================*/
+footer{
+	grid-area: footer;
+	width: 100vw;
+	background-color: $colorNavFoot;
+}
 
 
 
@@ -92,8 +99,9 @@ main{
 		display: grid;
 		grid-template-areas: 
 			'nav nav nav'
-			'main main main';
-		grid-template-rows: auto auto;
+			'main main main'
+			'footer footer footer';
+		grid-template-rows: auto auto 100px;
 	}
 	main{
 		display: flex;
@@ -130,7 +138,9 @@ main{
 		grid-template-areas: 
 		'nav'
 		'localNav'
-		'main';
+		'main'
+		'footer';
+		grid-template-rows: auto auto auto 100px;
 	}
 }
 
@@ -139,8 +149,10 @@ main{
 		.grid-container{
 			grid-template-areas: 
 		'nav nav nav'
-		'localNav main main';
+		'localNav main main'
+		'footer footer footer';
 		grid-template-columns: 250px auto auto;
+		grid-template-rows: auto auto 100px;
 		}
 		main{
 			section{
