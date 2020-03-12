@@ -1,0 +1,151 @@
+$colorNavFoot: rgba(34, 34, 34, 0.39);
+$colorSideNav: rgba(145, 145, 145, 0.39);
+$backgroundcolor: #44577a;
+$textColor: white;
+
+$phoneWitdh: 600px;
+
+
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	background-color: $backgroundcolor;
+	color: $textColor;
+}
+
+/*==================================
+Default nav + mobile
+==================================*/
+nav:not(.local){
+	grid-area: nav;
+}
+
+nav{
+	grid-area: nav;
+	display: flex;
+	background-color: $colorNavFoot;
+	justify-content: center;
+	ul{
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		align-items: center;
+		flex-direction: column;
+		li{
+			padding: 1rem;
+			margin: 0 2rem;
+			a{
+				color: $textColor;
+				text-decoration: none;
+				font-size: 2rem;
+				
+			}
+		}
+	}
+}
+
+nav.local{
+	grid-area: localNav;
+	background-color: $colorSideNav;
+	ul{
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		li{
+			min-width: 125px;
+			text-align: center;
+			a{
+				text-align: center;
+				font-size: 1.5rem;
+			}
+		}
+	}
+}
+/*==================================
+nav screen size
+==================================*/
+@media screen and (min-width: $phoneWitdh){
+	nav:not(.local) ul{
+		flex-direction: row;
+	}
+
+	nav.local{
+		ul{
+			flex-direction: column;
+		}
+	}
+}
+
+
+
+
+
+
+main{
+	grid-area: main;
+	text-align: center;
+}
+
+.homePage{
+	.grid-container{
+		display: grid;
+		grid-template-areas: 
+			'nav nav nav'
+			'main main main';
+		grid-template-rows: auto auto;
+	}
+	main{
+		display: flex;
+		justify-content: center;
+		section{
+			margin-top: 25px;
+			width: 75%;
+			h1{
+				font-size: 3rem;
+				margin-bottom: 1rem;
+			}
+			p{
+				
+			}
+		}
+		
+	}
+}
+
+@media screen and (min-width: $phoneWitdh){
+	.homePage{
+		main{
+			section{
+				width: 50%;
+			}
+		}
+	}
+}
+
+
+.gamePage{
+	.grid-container{
+		display: grid;
+		grid-template-areas: 
+		'nav'
+		'localNav'
+		'main';
+	}
+}
+
+@media screen and (min-width: $phoneWitdh){
+	.gamePage{
+		.grid-container{
+			grid-template-areas: 
+		'nav nav nav'
+		'localNav main main';
+		grid-template-columns: 250px auto auto;
+		}
+		main{
+			section{
+				width: 50%;
+			}
+		}
+	}
+}

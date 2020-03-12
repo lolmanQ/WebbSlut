@@ -1,0 +1,160 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: #44577a;
+  color: white;
+}
+
+/*==================================
+Default nav + mobile
+==================================*/
+nav:not(.local) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: nav;
+}
+
+nav {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: nav;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: rgba(34, 34, 34, 0.39);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+nav ul li {
+  padding: 1rem;
+  margin: 0 2rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+nav.local {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: localNav;
+  background-color: rgba(145, 145, 145, 0.39);
+}
+
+nav.local ul {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+nav.local ul li {
+  min-width: 125px;
+  text-align: center;
+}
+
+nav.local ul li a {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/*==================================
+nav screen size
+==================================*/
+@media screen and (min-width: 600px) {
+  nav:not(.local) ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  nav.local ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+main {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: main;
+  text-align: center;
+}
+
+.homePage .grid-container {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'nav nav nav' 'main main main';
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+}
+
+.homePage main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.homePage main section {
+  margin-top: 25px;
+  width: 75%;
+}
+
+.homePage main section h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .homePage main section {
+    width: 50%;
+  }
+}
+
+.gamePage .grid-container {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'nav' 'localNav' 'main';
+}
+
+@media screen and (min-width: 600px) {
+  .gamePage .grid-container {
+        grid-template-areas: 'nav nav nav' 'localNav main main';
+    -ms-grid-columns: 250px auto auto;
+        grid-template-columns: 250px auto auto;
+  }
+  .gamePage main section {
+    width: 50%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
