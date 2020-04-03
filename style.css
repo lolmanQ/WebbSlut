@@ -51,14 +51,54 @@ nav ul li a {
   font-size: 2rem;
 }
 
-nav.local {
+nav ul li a:hover {
+  color: #d4d4d4;
+}
+
+/*
+section{
+	grid-area: localNav;
+	background-color: $colorSideNav;
+	nav.local{
+		background-color: rgba($color: #000000, $alpha: 0.0);
+		position: sticky;
+		top: 0;
+		ul{
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+			li{
+				min-width: 125px;
+				text-align: center;
+				margin: 0;
+				a{
+					text-align: center;
+					font-size: 1.5rem;
+				}
+			}
+
+			li:hover{
+				background-color: rgba(145, 145, 145, 0.39);
+			}
+		}
+	}
+}*/
+section.local {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: localNav;
   background-color: rgba(145, 145, 145, 0.39);
 }
 
-nav.local ul {
+section.local nav.local {
+  background-color: rgba(0, 0, 0, 0);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -70,14 +110,18 @@ nav.local ul {
           justify-content: space-evenly;
 }
 
-nav.local ul li {
-  min-width: 125px;
+section.local nav.local a {
   text-align: center;
+  min-width: 125px;
+  padding: 1rem;
+  display: block;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
 }
 
-nav.local ul li a {
-  text-align: center;
-  font-size: 1.5rem;
+section.local nav.local a:hover {
+  background-color: rgba(145, 145, 145, 0.39);
 }
 
 /*==================================
@@ -95,6 +139,22 @@ nav screen size
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+  nav.local ul li {
+    padding: 1rem;
+    width: 100%;
+  }
+  section.local nav.local {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
   }
 }
 
@@ -105,8 +165,30 @@ footer {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: footer;
-  width: 100vw;
+  width: 100%;
   background-color: rgba(34, 34, 34, 0.39);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer p {
+  color: white;
+  margin: 0;
+}
+
+footer a {
+  color: white;
 }
 
 main {
@@ -157,6 +239,40 @@ main {
       grid-template-rows: auto auto auto 100px;
 }
 
+.gamePage main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gamePage main hr {
+  width: 90%;
+}
+
+.gamePage main article {
+  padding: 2rem;
+}
+
+.gamePage main article img {
+  width: 50%;
+  border-radius: 5%;
+}
+
+.gamePage main article h2 {
+  font-size: 2rem;
+}
+
+.gamePage main article p {
+  text-align: left;
+}
+
 @media screen and (min-width: 600px) {
   .gamePage .grid-container {
         grid-template-areas: 'nav nav nav' 'localNav main main' 'footer footer footer';
@@ -165,8 +281,44 @@ main {
     -ms-grid-rows: auto auto 100px;
         grid-template-rows: auto auto 100px;
   }
-  .gamePage main section {
-    width: 50%;
+  .gamePage main hr {
+    width: 75%;
   }
+  .gamePage main article {
+    width: calc(90% - 4rem);
+    margin: 1rem;
+  }
+  .gamePage main article img {
+    width: 70%;
+  }
+}
+
+#mario {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(250, 28, 28, 0.596)), to(rgba(48, 241, 57, 0.4)));
+  background: linear-gradient(90deg, rgba(250, 28, 28, 0.596), rgba(48, 241, 57, 0.4));
+}
+
+#fortnite {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(2, 51, 187, 0.4)), to(rgba(10, 175, 197, 0.4)));
+  background: linear-gradient(90deg, rgba(2, 51, 187, 0.4), rgba(10, 175, 197, 0.4));
+}
+
+#pong {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(31, 31, 31, 0.4)), to(rgba(151, 151, 151, 0.4)));
+  background: linear-gradient(90deg, rgba(31, 31, 31, 0.4), rgba(151, 151, 151, 0.4));
+}
+
+#zelda {
+  background: linear-gradient(60deg, rgba(10, 158, 5, 0.4), rgba(5, 142, 177, 0.562));
+}
+
+#beatSaber {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0.4)));
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
+}
+
+#pokemon {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0.4)));
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
 }
 /*# sourceMappingURL=style.css.map */

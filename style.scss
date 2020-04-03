@@ -40,27 +40,70 @@ nav{
 				font-size: 2rem;
 				
 			}
-		}
-	}
-}
-
-nav.local{
-	grid-area: localNav;
-	background-color: $colorSideNav;
-	ul{
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: space-evenly;
-		li{
-			min-width: 125px;
-			text-align: center;
-			a{
-				text-align: center;
-				font-size: 1.5rem;
+			a:hover{
+				color: rgb(212, 212, 212);
 			}
 		}
 	}
 }
+
+/*
+section{
+	grid-area: localNav;
+	background-color: $colorSideNav;
+	nav.local{
+		background-color: rgba($color: #000000, $alpha: 0.0);
+		position: sticky;
+		top: 0;
+		ul{
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+			li{
+				min-width: 125px;
+				text-align: center;
+				margin: 0;
+				a{
+					text-align: center;
+					font-size: 1.5rem;
+				}
+			}
+
+			li:hover{
+				background-color: rgba(145, 145, 145, 0.39);
+			}
+		}
+	}
+}*/
+
+section.local{
+	grid-area: localNav;
+	background-color: $colorSideNav;
+	nav.local{
+		background-color: rgba($color: #000000, $alpha: 0.0);
+		position: sticky;
+		top: 0;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		a{
+			text-align: center;
+			min-width: 125px;
+			padding: 1rem;
+			display: block;
+			font-size: 1.5rem;
+			text-decoration: none;
+			color: $textColor;
+		}
+
+		a:hover{
+			background-color: rgba(145, 145, 145, 0.39);
+		}
+	}
+}
+
 /*==================================
 nav screen size
 ==================================*/
@@ -72,7 +115,17 @@ nav screen size
 	nav.local{
 		ul{
 			flex-direction: column;
+			justify-content: start;
+			li{
+				
+				padding: 1rem;
+				width: 100%;
+			}
 		}
+	}
+	section.local nav.local{
+		flex-direction: column;
+		justify-content: start;
 	}
 }
 
@@ -83,8 +136,19 @@ Footer
 ==================================*/
 footer{
 	grid-area: footer;
-	width: 100vw;
+	width: 100%;
 	background-color: $colorNavFoot;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	p{
+		color: $textColor;
+		margin: 0;
+	}
+	a{
+		color: $textColor;
+	}
 }
 
 
@@ -142,6 +206,28 @@ main{
 		'footer';
 		grid-template-rows: auto auto auto 100px;
 	}
+
+	main{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		hr{
+			width: 90%;
+		}
+		article{
+			padding: 2rem;
+			img{
+				width: 50%;
+				border-radius: 5%;
+			}
+			h2{
+				font-size: 2rem;
+			}
+			p{
+				text-align: left;
+			}
+		}
+	}
 }
 
 @media screen and (min-width: $phoneWitdh){
@@ -155,9 +241,36 @@ main{
 		grid-template-rows: auto auto 100px;
 		}
 		main{
-			section{
-				width: 50%;
+			hr{
+				width: 75%;
+			}
+			article{
+				width: calc(90% - 4rem);
+				margin: 1rem;
+				img{
+					width: 70%;
+				}
 			}
 		}
 	}
+}
+
+
+#mario{
+	background: linear-gradient(90deg, rgba(250, 28, 28, 0.596), rgba(48, 241, 57, 0.4));
+}
+#fortnite{
+	background: linear-gradient(90deg, rgba(2, 51, 187, 0.4), rgba(10, 175, 197, 0.4));
+}
+#pong{
+	background: linear-gradient(90deg, rgba(31, 31, 31, 0.4), rgba(151, 151, 151, 0.4));
+}
+#zelda{
+	background: linear-gradient(60deg, rgba(10, 158, 5, 0.4), rgba(5, 142, 177, 0.562));
+}
+#beatSaber{
+	background: linear-gradient(90deg, rgba(255,255,255,0.4), rgba(255,255,255,0.4));
+}
+#pokemon{
+	background: linear-gradient(90deg, rgba(255,255,255,0.4), rgba(255,255,255,0.4));
 }
