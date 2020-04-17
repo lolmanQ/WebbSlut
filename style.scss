@@ -136,12 +136,13 @@ Footer
 ==================================*/
 footer{
 	grid-area: footer;
-	width: 100%;
+	width: calc(100% - 2rem);
 	background-color: $colorNavFoot;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding: 1rem;
 	p{
 		color: $textColor;
 		margin: 0;
@@ -158,6 +159,10 @@ main{
 	text-align: center;
 }
 
+/*==================================
+Home page styling
+==================================*/
+
 .homePage{
 	.grid-container{
 		display: grid;
@@ -170,6 +175,9 @@ main{
 	main{
 		display: flex;
 		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
 		section{
 			margin-top: 25px;
 			width: 75%;
@@ -177,8 +185,8 @@ main{
 				font-size: 3rem;
 				margin-bottom: 1rem;
 			}
-			p{
-				
+			h2{
+				font-size: 2rem;
 			}
 		}
 		
@@ -195,7 +203,9 @@ main{
 	}
 }
 
-
+/*==================================
+Game and console page
+==================================*/
 .gamePage{
 	.grid-container{
 		display: grid;
@@ -216,6 +226,7 @@ main{
 		}
 		article{
 			padding: 2rem;
+			border-radius: 1%;
 			img{
 				width: 50%;
 				border-radius: 5%;
@@ -255,7 +266,7 @@ main{
 	}
 }
 
-
+/* Game backgrounds */
 #mario{
 	background: linear-gradient(90deg, rgba(250, 28, 28, 0.596), rgba(48, 241, 57, 0.4));
 }
@@ -269,8 +280,114 @@ main{
 	background: linear-gradient(60deg, rgba(10, 158, 5, 0.4), rgba(5, 142, 177, 0.562));
 }
 #beatSaber{
-	background: linear-gradient(90deg, rgba(255,255,255,0.4), rgba(255,255,255,0.4));
+	background: linear-gradient(90deg, rgba(17, 137, 236, 0.4), rgba(241, 17, 17, 0.562));
 }
 #pokemon{
-	background: linear-gradient(90deg, rgba(255,255,255,0.4), rgba(255,255,255,0.4));
+	background: linear-gradient(90deg, rgba(36, 196, 63, 0.644), rgba(221, 17, 221, 0.678));
+}
+
+/* Console backgrounds */
+#nes{
+	background: linear-gradient(90deg, rgba(255, 255, 255, 0.479), rgba(241, 21, 21, 0.623));
+}
+
+#xbox360{
+	background: linear-gradient(90deg, rgba(3, 243, 3, 0.685), rgba(255, 255, 255, 0.4));
+}
+
+#xbox{
+	background: linear-gradient(90deg, rgba(100, 100, 100, 0.4), rgba(11, 131, 37, 0.4));
+}
+
+#ps3{
+	background: linear-gradient(90deg, rgba(49, 49, 49, 0.4), rgba(13, 122, 224, 0.4));
+}
+
+/*==================================
+Timeline page
+==================================*/
+body.timeline{
+	.grid-container{
+		display: grid;
+		grid-template-areas: 
+		'nav'
+		'main'
+		'footer';
+		grid-template-rows: auto auto 100px;
+	}
+	main{
+		section.box{
+			margin-top: 1rem;
+
+			h2{
+				font-size: 2rem;
+				margin-bottom: 0.5rem;
+			}
+			p{
+				margin: 1rem;
+				margin-top: 0;
+			}
+			img{
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $phoneWitdh){
+	body.timeline{
+		main{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			section.box{
+				margin-top: 1rem;
+				border-radius: 1%;
+				width: 50vw;
+				section{
+					display: flex;
+					flex-direction: row;
+				}
+				
+				h2{
+					font-size: 2rem;
+					margin-bottom: 0.5rem;
+					margin-left: 1rem;
+				}
+				p{
+					text-align: left;
+					margin: 1rem;
+					margin-top: 0;
+				}
+				img{
+					width: 50%;
+					margin: 1rem;
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
+
+/*==================================
+Scroll bar
+==================================*/
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f100; 
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888; 
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555; 
 }

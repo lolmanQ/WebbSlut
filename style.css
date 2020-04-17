@@ -162,10 +162,10 @@ nav screen size
 Footer
 ==================================*/
 footer {
-  -ms-grid-row: 4;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: footer;
-  width: 100%;
+  width: calc(100% - 2rem);
   background-color: rgba(34, 34, 34, 0.39);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -180,6 +180,7 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 1rem;
 }
 
 footer p {
@@ -192,12 +193,15 @@ footer a {
 }
 
 main {
-  -ms-grid-row: 3;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: main;
   text-align: center;
 }
 
+/*==================================
+Home page styling
+==================================*/
 .homePage .grid-container {
   display: -ms-grid;
   display: grid;
@@ -213,6 +217,13 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .homePage main section {
@@ -225,12 +236,19 @@ main {
   margin-bottom: 1rem;
 }
 
+.homePage main section h2 {
+  font-size: 2rem;
+}
+
 @media screen and (min-width: 600px) {
   .homePage main section {
     width: 50%;
   }
 }
 
+/*==================================
+Game and console page
+==================================*/
 .gamePage .grid-container {
   display: -ms-grid;
   display: grid;
@@ -258,6 +276,7 @@ main {
 
 .gamePage main article {
   padding: 2rem;
+  border-radius: 1%;
 }
 
 .gamePage main article img {
@@ -293,6 +312,7 @@ main {
   }
 }
 
+/* Game backgrounds */
 #mario {
   background: -webkit-gradient(linear, left top, right top, from(rgba(250, 28, 28, 0.596)), to(rgba(48, 241, 57, 0.4)));
   background: linear-gradient(90deg, rgba(250, 28, 28, 0.596), rgba(48, 241, 57, 0.4));
@@ -313,12 +333,129 @@ main {
 }
 
 #beatSaber {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0.4)));
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
+  background: -webkit-gradient(linear, left top, right top, from(rgba(17, 137, 236, 0.4)), to(rgba(241, 17, 17, 0.562)));
+  background: linear-gradient(90deg, rgba(17, 137, 236, 0.4), rgba(241, 17, 17, 0.562));
 }
 
 #pokemon {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0.4)));
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
+  background: -webkit-gradient(linear, left top, right top, from(rgba(36, 196, 63, 0.644)), to(rgba(221, 17, 221, 0.678)));
+  background: linear-gradient(90deg, rgba(36, 196, 63, 0.644), rgba(221, 17, 221, 0.678));
+}
+
+/* Console backgrounds */
+#nes {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.479)), to(rgba(241, 21, 21, 0.623)));
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.479), rgba(241, 21, 21, 0.623));
+}
+
+#xbox360 {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(3, 243, 3, 0.685)), to(rgba(255, 255, 255, 0.4)));
+  background: linear-gradient(90deg, rgba(3, 243, 3, 0.685), rgba(255, 255, 255, 0.4));
+}
+
+#xbox {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(100, 100, 100, 0.4)), to(rgba(11, 131, 37, 0.4)));
+  background: linear-gradient(90deg, rgba(100, 100, 100, 0.4), rgba(11, 131, 37, 0.4));
+}
+
+#ps3 {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(49, 49, 49, 0.4)), to(rgba(13, 122, 224, 0.4)));
+  background: linear-gradient(90deg, rgba(49, 49, 49, 0.4), rgba(13, 122, 224, 0.4));
+}
+
+/*==================================
+Timeline page
+==================================*/
+body.timeline .grid-container {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'nav' 'main' 'footer';
+  -ms-grid-rows: auto auto 100px;
+      grid-template-rows: auto auto 100px;
+}
+
+body.timeline main section.box {
+  margin-top: 1rem;
+}
+
+body.timeline main section.box h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+body.timeline main section.box p {
+  margin: 1rem;
+  margin-top: 0;
+}
+
+body.timeline main section.box img {
+  width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  body.timeline main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body.timeline main section.box {
+    margin-top: 1rem;
+    border-radius: 1%;
+    width: 50vw;
+  }
+  body.timeline main section.box section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  body.timeline main section.box h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+  }
+  body.timeline main section.box p {
+    text-align: left;
+    margin: 1rem;
+    margin-top: 0;
+  }
+  body.timeline main section.box img {
+    width: 50%;
+    margin: 1rem;
+    margin-top: 0;
+  }
+}
+
+/*==================================
+Scroll bar
+==================================*/
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f100;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 /*# sourceMappingURL=style.css.map */
