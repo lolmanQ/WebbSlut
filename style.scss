@@ -5,6 +5,9 @@ $textColor: white;
 
 $phoneWitdh: 600px;
 
+html{
+	scroll-behavior: smooth;
+}
 
 body{
 	font-family: Arial, Helvetica, sans-serif;
@@ -368,6 +371,71 @@ body.timeline{
 		}
 	}
 }
+
+/*==================================
+Contribute page
+==================================*/
+body.formPage{
+	.grid-container{
+		display: grid;
+		grid-template-areas: 
+			'nav nav nav'
+			'main main main'
+			'footer footer footer';
+		grid-template-rows: auto auto 100px;
+	}
+	main{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		section{
+			margin-top: 25px;
+			width: 75%;
+			h1{
+				font-size: 2rem;
+				margin-bottom: 1rem;
+			}
+			h2{
+				font-size: 2rem;
+			}
+		}
+		form{
+			textarea{
+				resize: none;
+				overflow-y: scroll;
+			}
+			input{
+				border-radius: 5%;
+			}
+			#set1{
+				text-align: left;
+			}
+			#set2{
+
+			}
+			:invalid{
+				border: 2px solid red;
+				border-radius: 5%;
+			}
+			:optional{
+				border: 2px solid lightblue;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $phoneWitdh){
+	body.formPage{
+		main{
+			section{
+				width: 50%;
+			}
+		}
+	}
+}
+
 
 /*==================================
 Scroll bar

@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -11,6 +15,7 @@ Default nav + mobile
 nav:not(.local) {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
   grid-area: nav;
 }
 
@@ -164,6 +169,7 @@ Footer
 footer {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
   grid-area: footer;
   width: calc(100% - 2rem);
   background-color: rgba(34, 34, 34, 0.39);
@@ -195,6 +201,7 @@ footer a {
 main {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
   grid-area: main;
   text-align: center;
 }
@@ -433,6 +440,75 @@ body.timeline main section.box img {
     width: 50%;
     margin: 1rem;
     margin-top: 0;
+  }
+}
+
+/*==================================
+Contribute page
+==================================*/
+body.formPage .grid-container {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'nav nav nav' 'main main main' 'footer footer footer';
+  -ms-grid-rows: auto auto 100px;
+      grid-template-rows: auto auto 100px;
+}
+
+body.formPage main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body.formPage main section {
+  margin-top: 25px;
+  width: 75%;
+}
+
+body.formPage main section h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+body.formPage main section h2 {
+  font-size: 2rem;
+}
+
+body.formPage main form textarea {
+  resize: none;
+  overflow-y: scroll;
+}
+
+body.formPage main form input {
+  border-radius: 5%;
+}
+
+body.formPage main form #set1 {
+  text-align: left;
+}
+
+body.formPage main form :invalid {
+  border: 2px solid red;
+  border-radius: 5%;
+}
+
+body.formPage main form :optional {
+  border: 2px solid lightblue;
+}
+
+@media screen and (min-width: 600px) {
+  body.formPage main section {
+    width: 50%;
   }
 }
 

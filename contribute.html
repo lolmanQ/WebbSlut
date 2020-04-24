@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css">
+		<title>help contribute</title>
+	</head>
+	<body class="formPage">
+		<div class="grid-container">
+			<nav>
+				<ul>
+					<li><a href="./games.html">Games</a></li>
+					<li><a href="./index.html">Home</a></li>
+					<li><a href="./consoles.html">Consoles</a></li>
+				</ul>
+			</nav>
+			<main>
+				<section>
+					<h1>Here you can help to expand your knowlage</h1>
+					<p>To help you just need to submit some information in the form below</p>
+					<hr/>
+				</section>
+				<section>
+					<form action="" method="GET">
+						<fieldset id="set1">
+							<legend>Personal information</legend>
+							<label for="name">Name:</label><br>
+							<input type="text" name="name" id="name" placeholder="name" required><br>
+							<label for="email">Email:</label><br>
+							<input type="email" name="email" id="email" placeholder="email@domain.com" required><br>
+							<label for="telNumb">Phone number:</label><br>
+							<input type="tel" name="telNumb" id="telNumb" placeholder="070-00 00 000"><br>
+							<label for="password">Password:</label><br>
+							<input type="password" name="password" id="password" required><br>
+
+							<input type="radio" id="male" name="gender" value="male">
+							<label for="male">Male</label><br>
+							<input type="radio" id="female" name="gender" value="female">
+							<label for="female">Female</label><br>
+							<input type="radio" id="other" name="gender" value="other">
+							<label for="other">Other</label><br>
+
+							<label for="jobb">Your jobb:</label><br>
+							<input list="jobbs" name="jobb"><br>
+							<datalist id="jobbs">
+								<option value="Programmer"></option>
+								<option value="David"></option>
+								<option value="Dude"></option>
+								<option value="Slave"></option>
+								<option value="Marketer"></option>
+								<option value="VD"></option>
+								<option value="Elias"></option>
+								<option value="Dum guy"></option>
+								<option value="Vscode developer"></option>
+								<option value="Profesinal python hater"></option>
+							</datalist>
+		
+							<label for="aboutYou">About you:</label><br>
+							<textarea name="aboutYou" id="aboutYou" style="resize: none;"></textarea><br>
+
+							<button>Save</button>
+						</fieldset>
+
+						<fieldset id="set2">
+							<legend>Article</legend>
+							<label for="title">Title</label><br>
+							<input type="text" name="title" id="title" placeholder="Title" required>
+							<br>
+							<br>
+
+							<label for="section1">First section</label><br>
+							<textarea name="section1" id="section1" placeholder="text" required></textarea><br>
+							
+							<label for="imgUrl">Image url</label><br>
+							<input type="url" name="imgUrl" id="imgUrl" required formnovalidate><br>
+							<label for="section2">Secound section</label><br>
+							<textarea name="section2" id="section2" placeholder="text" required></textarea><br>
+							
+							<label for="categorys">Category</label><br>
+							<select name="categorys" id="categorys" required>
+								<optgroup label="Games">
+									<option value="oldGame">Vintege game</option>
+									<option value="lastGengame">Last gen game</option>
+									<option value="newGame">New game</option>
+								</optgroup>
+								<optgroup label="Consoles">
+									<option value="oldConsole">Vintege console</option>
+									<option value="lastGenConsole">Last gen console</option>
+									<option value="newConsole">New console</option>
+								</optgroup>
+							</select>
+							<button>Save</button>
+						</fieldset>
+					</form>
+				</section>
+			</main>
+			<footer>
+				<p>This site is made by Elias Böök, for Webbutveckling 1</p>
+				<a href="https://lolman.name">Personal site/portfortfolio</a>
+			</footer>
+		</div>
+	</body>
+</html>
