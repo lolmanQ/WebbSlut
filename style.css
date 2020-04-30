@@ -1,3 +1,15 @@
+div.linkBox {
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+}
+
+div.linkBox:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -48,6 +60,10 @@ nav ul {
 nav ul li {
   padding: 1rem;
   margin: 0 2rem;
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
 }
 
 nav ul li a {
@@ -58,6 +74,11 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #d4d4d4;
+}
+
+nav ul li:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 /*
@@ -123,10 +144,15 @@ section.local nav.local a {
   font-size: 1.5rem;
   text-decoration: none;
   color: white;
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
 }
 
 section.local nav.local a:hover {
-  background-color: rgba(145, 145, 145, 0.39);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 /*==================================
@@ -212,7 +238,7 @@ Home page styling
 .homePage .grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'nav nav nav' 'main main main' 'footer footer footer';
+      grid-template-areas: 'nav nav nav' 'main main main' 'footer footer footer';
   -ms-grid-rows: auto auto 100px;
       grid-template-rows: auto auto 100px;
 }
@@ -259,7 +285,7 @@ Game and console page
 .gamePage .grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'nav' 'localNav' 'main' 'footer';
+      grid-template-areas: 'nav' 'localNav' 'main' 'footer';
   -ms-grid-rows: auto auto auto 100px;
       grid-template-rows: auto auto auto 100px;
 }
@@ -301,7 +327,7 @@ Game and console page
 
 @media screen and (min-width: 600px) {
   .gamePage .grid-container {
-        grid-template-areas: 'nav nav nav' 'localNav main main' 'footer footer footer';
+        grid-template-areas: 'nav nav nav' 'localNav main main' 'footer footer footer';
     -ms-grid-columns: 250px auto auto;
         grid-template-columns: 250px auto auto;
     -ms-grid-rows: auto auto 100px;
@@ -376,13 +402,16 @@ Timeline page
 body.timeline .grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'nav' 'main' 'footer';
+      grid-template-areas: 'nav' 'main' 'footer';
   -ms-grid-rows: auto auto 100px;
       grid-template-rows: auto auto 100px;
 }
 
 body.timeline main section.box {
+  -webkit-transition: ease all .5s;
+  transition: ease all .5s;
   margin-top: 1rem;
+  border-radius: 1%;
 }
 
 body.timeline main section.box h2 {
@@ -399,6 +428,32 @@ body.timeline main section.box img {
   width: 100%;
 }
 
+body.timeline main section.box table {
+  margin: 1rem;
+  border-collapse: collapse;
+}
+
+body.timeline main section.box table th, body.timeline main section.box table td {
+  -webkit-transition: ease all 1.2s;
+  transition: ease all 1.2s;
+  min-width: 20px;
+  border: 2px solid black;
+  padding: 5px;
+  text-align: left;
+}
+
+body.timeline main section.box table tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+body.timeline main section.box table tr:nth-child(odd) {
+  background-color: rgba(59, 59, 59, 0.4);
+}
+
+body.timeline main section.box table thead tr:nth-child(1) {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 @media screen and (min-width: 600px) {
   body.timeline main {
     display: -webkit-box;
@@ -413,9 +468,7 @@ body.timeline main section.box img {
             align-items: center;
   }
   body.timeline main section.box {
-    margin-top: 1rem;
-    border-radius: 1%;
-    width: 50vw;
+    width: 75vw;
   }
   body.timeline main section.box section {
     display: -webkit-box;
@@ -441,6 +494,26 @@ body.timeline main section.box img {
     margin: 1rem;
     margin-top: 0;
   }
+  body.timeline main section.box iframe {
+    width: calc(100% - 2rem);
+    height: 300px;
+    margin: 1rem;
+  }
+  body.timeline main section.box table th, body.timeline main section.box table td {
+    min-width: 75px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  body.timeline main section.box {
+    width: 50vw;
+  }
+  body.timeline main section.box iframe {
+    height: 400px;
+  }
+  body.timeline main section.box table th, body.timeline main section.box table td {
+    min-width: 100px;
+  }
 }
 
 /*==================================
@@ -449,7 +522,7 @@ Contribute page
 body.formPage .grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'nav nav nav' 'main main main' 'footer footer footer';
+      grid-template-areas: 'nav nav nav' 'main main main' 'footer footer footer';
   -ms-grid-rows: auto auto 100px;
       grid-template-rows: auto auto 100px;
 }

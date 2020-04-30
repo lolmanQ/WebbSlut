@@ -2,8 +2,17 @@ $colorNavFoot: rgba(34, 34, 34, 0.39);
 $colorSideNav: rgba(145, 145, 145, 0.39);
 $backgroundcolor: #44577a;
 $textColor: white;
+$antiTextColor: black;
 
 $phoneWitdh: 600px;
+$mediumWidth: 1400px;
+div.linkBox{
+    transition: transform .2s;
+}
+
+div.linkBox:hover{
+    transform: scale(1.2);
+}
 
 html{
 	scroll-behavior: smooth;
@@ -36,17 +45,20 @@ nav{
 		flex-direction: column;
 		li{
 			padding: 1rem;
-			margin: 0 2rem;
+            margin: 0 2rem;
+            transition: transform .2s;
 			a{
 				color: $textColor;
 				text-decoration: none;
-				font-size: 2rem;
-				
-			}
+				font-size: 2rem;	
+            }
 			a:hover{
-				color: rgb(212, 212, 212);
+                color: rgb(212, 212, 212);
 			}
-		}
+        }
+        li:hover{
+            transform: scale(1.2);
+        }
 	}
 }
 
@@ -98,11 +110,13 @@ section.local{
 			display: block;
 			font-size: 1.5rem;
 			text-decoration: none;
-			color: $textColor;
+            color: $textColor;
+            transition: transform .2s;
 		}
 
 		a:hover{
-			background-color: rgba(145, 145, 145, 0.39);
+            //background-color: rgba(145, 145, 145, 0.39);
+            transform: scale(1.2);
 		}
 	}
 }
@@ -320,8 +334,9 @@ body.timeline{
 	}
 	main{
 		section.box{
+			transition: ease all .5s;
 			margin-top: 1rem;
-
+			border-radius: 1%;
 			h2{
 				font-size: 2rem;
 				margin-bottom: 0.5rem;
@@ -332,6 +347,26 @@ body.timeline{
 			}
 			img{
 				width: 100%;
+			}
+			table{
+				margin: 1rem;
+				border-collapse: collapse;
+				th, td{
+					transition: ease all 1.2s;
+					min-width: 20px;
+					border: 2px solid black;
+					padding: 5px;
+					text-align: left;
+				}
+				tr:nth-child(even){
+					background-color: rgba(0, 0, 0, 0.4);
+				}
+				tr:nth-child(odd){
+					background-color: rgba(59, 59, 59, 0.4);
+				}
+				thead tr:nth-child(1){
+					background-color: rgba(0, 0, 0, 0.4);
+				}
 			}
 		}
 	}
@@ -344,14 +379,11 @@ body.timeline{
 			flex-direction: column;
 			align-items: center;
 			section.box{
-				margin-top: 1rem;
-				border-radius: 1%;
-				width: 50vw;
+				width: 75vw;
 				section{
 					display: flex;
 					flex-direction: row;
 				}
-				
 				h2{
 					font-size: 2rem;
 					margin-bottom: 0.5rem;
@@ -367,11 +399,38 @@ body.timeline{
 					margin: 1rem;
 					margin-top: 0;
 				}
+				iframe{
+					width: calc(100% - 2rem);
+					height: 300px;
+					margin: 1rem;
+				}
+				table{
+					th, td{
+						min-width: 75px;
+					}
+				}
 			}
 		}
 	}
 }
 
+@media screen and (min-width: $mediumWidth){
+	body.timeline{
+		main{
+			section.box{
+				width: 50vw;
+				iframe{
+					height: 400px;
+				}
+				table{
+					th, td{
+						min-width: 100px;
+					}
+				}
+			}
+		}
+	}
+}
 /*==================================
 Contribute page
 ==================================*/
