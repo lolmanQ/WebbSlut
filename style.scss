@@ -333,7 +333,7 @@ body.timeline{
 		grid-template-rows: auto auto 100px;
 	}
 	main{
-		section.box{
+		article.box{
 			transition: ease all .5s;
 			margin-top: 1rem;
 			border-radius: 1%;
@@ -378,7 +378,7 @@ body.timeline{
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			section.box{
+			article.box{
 				width: 75vw;
 				section{
 					display: flex;
@@ -417,7 +417,7 @@ body.timeline{
 @media screen and (min-width: $mediumWidth){
 	body.timeline{
 		main{
-			section.box{
+			article.box{
 				width: 50vw;
 				iframe{
 					height: 400px;

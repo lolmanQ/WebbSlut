@@ -407,33 +407,33 @@ body.timeline .grid-container {
       grid-template-rows: auto auto 100px;
 }
 
-body.timeline main section.box {
+body.timeline main article.box {
   -webkit-transition: ease all .5s;
   transition: ease all .5s;
   margin-top: 1rem;
   border-radius: 1%;
 }
 
-body.timeline main section.box h2 {
+body.timeline main article.box h2 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
 
-body.timeline main section.box p {
+body.timeline main article.box p {
   margin: 1rem;
   margin-top: 0;
 }
 
-body.timeline main section.box img {
+body.timeline main article.box img {
   width: 100%;
 }
 
-body.timeline main section.box table {
+body.timeline main article.box table {
   margin: 1rem;
   border-collapse: collapse;
 }
 
-body.timeline main section.box table th, body.timeline main section.box table td {
+body.timeline main article.box table th, body.timeline main article.box table td {
   -webkit-transition: ease all 1.2s;
   transition: ease all 1.2s;
   min-width: 20px;
@@ -442,15 +442,15 @@ body.timeline main section.box table th, body.timeline main section.box table td
   text-align: left;
 }
 
-body.timeline main section.box table tr:nth-child(even) {
+body.timeline main article.box table tr:nth-child(even) {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-body.timeline main section.box table tr:nth-child(odd) {
+body.timeline main article.box table tr:nth-child(odd) {
   background-color: rgba(59, 59, 59, 0.4);
 }
 
-body.timeline main section.box table thead tr:nth-child(1) {
+body.timeline main article.box table thead tr:nth-child(1) {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -467,10 +467,10 @@ body.timeline main section.box table thead tr:nth-child(1) {
         -ms-flex-align: center;
             align-items: center;
   }
-  body.timeline main section.box {
+  body.timeline main article.box {
     width: 75vw;
   }
-  body.timeline main section.box section {
+  body.timeline main article.box section {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -479,39 +479,39 @@ body.timeline main section.box table thead tr:nth-child(1) {
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  body.timeline main section.box h2 {
+  body.timeline main article.box h2 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
     margin-left: 1rem;
   }
-  body.timeline main section.box p {
+  body.timeline main article.box p {
     text-align: left;
     margin: 1rem;
     margin-top: 0;
   }
-  body.timeline main section.box img {
+  body.timeline main article.box img {
     width: 50%;
     margin: 1rem;
     margin-top: 0;
   }
-  body.timeline main section.box iframe {
+  body.timeline main article.box iframe {
     width: calc(100% - 2rem);
     height: 300px;
     margin: 1rem;
   }
-  body.timeline main section.box table th, body.timeline main section.box table td {
+  body.timeline main article.box table th, body.timeline main article.box table td {
     min-width: 75px;
   }
 }
 
 @media screen and (min-width: 1400px) {
-  body.timeline main section.box {
+  body.timeline main article.box {
     width: 50vw;
   }
-  body.timeline main section.box iframe {
+  body.timeline main article.box iframe {
     height: 400px;
   }
-  body.timeline main section.box table th, body.timeline main section.box table td {
+  body.timeline main article.box table th, body.timeline main article.box table td {
     min-width: 100px;
   }
 }
