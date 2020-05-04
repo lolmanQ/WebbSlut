@@ -42,7 +42,7 @@
 							<label for="other">Other</label><br>
 
 							<label for="jobb">Your jobb:</label><br>
-							<input list="jobbs" name="jobb"><br>
+							<input list="jobbs" name="jobb" id="jobb"><br>
 							<datalist id="jobbs">
 								<option value="Programmer"></option>
 								<option value="David"></option>
@@ -73,12 +73,12 @@
 							<textarea name="section1" id="section1" placeholder="text" required></textarea><br>
 							
 							<label for="imgUrl">Image url</label><br>
-							<input type="url" name="imgUrl" id="imgUrl" required formnovalidate><br>
+							<input type="url" name="imgUrl" id="imgUrl" required><br>
 							<label for="section2">Secound section</label><br>
 							<textarea name="section2" id="section2" placeholder="text" required></textarea><br>
 							
 							<label for="categorys">Category</label><br>
-							<select name="categorys" id="categorys" required>
+							<select name="categorys" id="categorys">
 								<optgroup label="Games">
 									<option value="oldGame">Vintege game</option>
 									<option value="lastGengame">Last gen game</option>
