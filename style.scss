@@ -334,8 +334,9 @@ body.timeline{
 	}
 	main{
 		article.box{
-			transition: ease all .5s;
-			margin-top: 1rem;
+			transition: ease all .2s;
+			//margin-top: 1rem;
+			margin: 1rem 0;
 			border-radius: 1%;
 			h2{
 				font-size: 2rem;
@@ -374,6 +375,31 @@ body.timeline{
 
 @media screen and (min-width: $phoneWitdh){
 	body.timeline{
+		nav.local{
+			z-index: 2;
+			transition: ease all .5s;
+			position: fixed;
+			top:100px;
+			left: 50px;
+			background-color: rgba(7, 7, 7, 0.37);
+			border-radius: 5%;
+			padding: 0.5rem 1rem;
+			transform: scale(0.4) translateX(-200px);
+			ol{
+				li{
+					transition: ease all .2s;
+					a{
+						color: white;
+					}
+				}
+				li:hover{
+					transform: scale(1.2);
+				}
+			}
+		}
+		nav.local:hover{
+			transform: scale(1);
+		}
 		main{
 			display: flex;
 			flex-direction: column;
@@ -410,12 +436,19 @@ body.timeline{
 					}
 				}
 			}
+			>hr{
+				width: calc(75vw - 2px);
+			}
 		}
 	}
 }
 
 @media screen and (min-width: $mediumWidth){
 	body.timeline{
+		nav.local{
+			background-color: rgba(7, 7, 7, 0);
+			transform: none;
+		}
 		main{
 			article.box{
 				width: 50vw;
@@ -427,6 +460,9 @@ body.timeline{
 						min-width: 100px;
 					}
 				}
+			}
+			>hr{
+				width: calc(50vw - 2px);
 			}
 		}
 	}
@@ -479,7 +515,12 @@ body.formPage{
 				border-radius: 5%;
 			}
 			:optional{
+				//sets styling if field is not required/are optional
 				border: 2px solid lightblue;
+			}
+			:invalid::after{
+				//if not all input that have the required tag are filled the after tag will be activa and tell the user that it has not filled all field
+				content: "Not all required field are filled";
 			}
 		}
 	}

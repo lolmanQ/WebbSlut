@@ -238,7 +238,7 @@ Home page styling
 .homePage .grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'nav nav nav' 'main main main' 'footer footer footer';
+      grid-template-areas: 'nav nav nav' 'main main main' 'footer footer footer';
   -ms-grid-rows: auto auto 100px;
       grid-template-rows: auto auto 100px;
 }
@@ -285,7 +285,7 @@ Game and console page
 .gamePage .grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'nav' 'localNav' 'main' 'footer';
+      grid-template-areas: 'nav' 'localNav' 'main' 'footer';
   -ms-grid-rows: auto auto auto 100px;
       grid-template-rows: auto auto auto 100px;
 }
@@ -327,7 +327,7 @@ Game and console page
 
 @media screen and (min-width: 600px) {
   .gamePage .grid-container {
-        grid-template-areas: 'nav nav nav' 'localNav main main' 'footer footer footer';
+        grid-template-areas: 'nav nav nav' 'localNav main main' 'footer footer footer';
     -ms-grid-columns: 250px auto auto;
         grid-template-columns: 250px auto auto;
     -ms-grid-rows: auto auto 100px;
@@ -402,15 +402,15 @@ Timeline page
 body.timeline .grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'nav' 'main' 'footer';
+      grid-template-areas: 'nav' 'main' 'footer';
   -ms-grid-rows: auto auto 100px;
       grid-template-rows: auto auto 100px;
 }
 
 body.timeline main article.box {
-  -webkit-transition: ease all .5s;
-  transition: ease all .5s;
-  margin-top: 1rem;
+  -webkit-transition: ease all .2s;
+  transition: ease all .2s;
+  margin: 1rem 0;
   border-radius: 1%;
 }
 
@@ -455,6 +455,34 @@ body.timeline main article.box table thead tr:nth-child(1) {
 }
 
 @media screen and (min-width: 600px) {
+  body.timeline nav.local {
+    z-index: 2;
+    -webkit-transition: ease all .5s;
+    transition: ease all .5s;
+    position: fixed;
+    top: 100px;
+    left: 50px;
+    background-color: rgba(7, 7, 7, 0.37);
+    border-radius: 5%;
+    padding: 0.5rem 1rem;
+    -webkit-transform: scale(0.4) translateX(-200px);
+            transform: scale(0.4) translateX(-200px);
+  }
+  body.timeline nav.local ol li {
+    -webkit-transition: ease all .2s;
+    transition: ease all .2s;
+  }
+  body.timeline nav.local ol li a {
+    color: white;
+  }
+  body.timeline nav.local ol li:hover {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  body.timeline nav.local:hover {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
   body.timeline main {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -502,9 +530,17 @@ body.timeline main article.box table thead tr:nth-child(1) {
   body.timeline main article.box table th, body.timeline main article.box table td {
     min-width: 75px;
   }
+  body.timeline main > hr {
+    width: calc(75vw - 2px);
+  }
 }
 
 @media screen and (min-width: 1400px) {
+  body.timeline nav.local {
+    background-color: rgba(7, 7, 7, 0);
+    -webkit-transform: none;
+            transform: none;
+  }
   body.timeline main article.box {
     width: 50vw;
   }
@@ -514,6 +550,9 @@ body.timeline main article.box table thead tr:nth-child(1) {
   body.timeline main article.box table th, body.timeline main article.box table td {
     min-width: 100px;
   }
+  body.timeline main > hr {
+    width: calc(50vw - 2px);
+  }
 }
 
 /*==================================
@@ -522,7 +561,7 @@ Contribute page
 body.formPage .grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'nav nav nav' 'main main main' 'footer footer footer';
+      grid-template-areas: 'nav nav nav' 'main main main' 'footer footer footer';
   -ms-grid-rows: auto auto 100px;
       grid-template-rows: auto auto 100px;
 }
@@ -577,6 +616,10 @@ body.formPage main form :invalid {
 
 body.formPage main form :optional {
   border: 2px solid lightblue;
+}
+
+body.formPage main form :invalid::after {
+  content: "Not all required field are filled";
 }
 
 @media screen and (min-width: 600px) {
