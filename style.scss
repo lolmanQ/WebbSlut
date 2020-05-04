@@ -7,6 +7,11 @@ $antiTextColor: black;
 $phoneWitdh: 600px;
 $mediumWidth: 1400px;
 
+@font-face{
+	font-family: MyFont;
+	src: url("./fonts/roboto-regular.ttf");
+}
+
 div.linkBox{
 	transition: transform .2s;
 	a:link{
@@ -32,7 +37,7 @@ html{
 }
 
 body{
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Myfont, Arial, Helvetica, sans-serif;
 	margin: 0;
 	background-color: $backgroundcolor;
 	color: $textColor;
