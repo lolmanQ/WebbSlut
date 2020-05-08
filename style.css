@@ -542,10 +542,16 @@ body.timeline main article.box table thead tr:nth-child(1) {
     margin: 1rem;
     margin-top: 0;
   }
-  body.timeline main article.box img {
+  body.timeline main article.box .including.figure p {
+    width: 50%;
+  }
+  body.timeline main article.box figure {
     width: 50%;
     margin: 1rem;
     margin-top: 0;
+  }
+  body.timeline main article.box figure img {
+    width: 100%;
   }
   body.timeline main article.box iframe {
     width: calc(100% - 2rem);

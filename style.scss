@@ -441,10 +441,16 @@ body.timeline{
 					margin: 1rem;
 					margin-top: 0;
 				}
-				img{
+				.including.figure p{
+					width: 50%;
+				}
+				figure{
 					width: 50%;
 					margin: 1rem;
 					margin-top: 0;
+					img{
+						width: 100%;
+					}
 				}
 				iframe{
 					width: calc(100% - 2rem);
