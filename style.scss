@@ -14,6 +14,9 @@ $mediumWidth: 1400px;
 
 div.linkBox{
 	transition: transform .2s;
+	a{
+		transition: ease all .2s;
+	}
 	a:link{
 		color:$textColor;
 	}
@@ -369,6 +372,7 @@ body.timeline{
 			}
 			img{
 				width: 100%;
+				object-fit: cover;
 			}
 			table{
 				margin: 1rem;

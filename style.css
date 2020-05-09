@@ -10,6 +10,11 @@ div.linkBox {
   transition: transform .2s, -webkit-transform .2s;
 }
 
+div.linkBox a {
+  -webkit-transition: ease all .2s;
+  transition: ease all .2s;
+}
+
 div.linkBox a:link {
   color: white;
 }
@@ -260,7 +265,7 @@ Home page styling
 .homePage .grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'nav nav nav' 'main main main' 'footer footer footer';
+      grid-template-areas: 'nav nav nav' 'main main main' 'footer footer footer';
   -ms-grid-rows: auto auto 100px;
       grid-template-rows: auto auto 100px;
 }
@@ -308,7 +313,7 @@ Game and console page
 .gamePage .grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'nav' 'localNav' 'main' 'footer';
+      grid-template-areas: 'nav' 'localNav' 'main' 'footer';
   -ms-grid-rows: auto auto auto 100px;
       grid-template-rows: auto auto auto 100px;
 }
@@ -352,7 +357,7 @@ Game and console page
 
 @media screen and (min-width: 600px) {
   .gamePage .grid-container {
-        grid-template-areas: 'nav nav nav' 'localNav main main' 'footer footer footer';
+        grid-template-areas: 'nav nav nav' 'localNav main main' 'footer footer footer';
     -ms-grid-columns: 250px auto auto;
         grid-template-columns: 250px auto auto;
     -ms-grid-rows: auto auto 100px;
@@ -427,7 +432,7 @@ Timeline page
 body.timeline .grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'nav' 'main' 'footer';
+      grid-template-areas: 'nav' 'main' 'footer';
   -ms-grid-rows: auto auto 100px;
       grid-template-rows: auto auto 100px;
 }
@@ -451,6 +456,8 @@ body.timeline main article.box p {
 
 body.timeline main article.box img {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 body.timeline main article.box table {
@@ -586,7 +593,7 @@ Contribute page
 body.formPage .grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'nav nav nav' 'main main main' 'footer footer footer';
+      grid-template-areas: 'nav nav nav' 'main main main' 'footer footer footer';
   -ms-grid-rows: auto auto 100px;
       grid-template-rows: auto auto 100px;
 }
