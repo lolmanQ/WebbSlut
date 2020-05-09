@@ -22,7 +22,7 @@
 					<hr/>
 				</section>
 				<section>
-					<form action="" method="GET">
+					<form action="" method="GET"><!--har inte något i action eftersom att det finns inget upsat för att ta hand om requestet-->
 						<fieldset id="set1">
 							<legend>Personal information</legend>
 							<label for="name">Name:</label><br>
@@ -58,8 +58,9 @@
 		
 							<label for="aboutYou">About you:</label><br>
 							<textarea name="aboutYou" id="aboutYou" style="resize: none;"></textarea><br>
-
-							<button>Save</button>
+							<label for="saveInfo">Keep info:</label>
+							<input type="checkbox" name="saveInfo" id="saveInfo"><br>
+							<button disabled>Save</button>
 						</fieldset>
 
 						<fieldset id="set2">
@@ -90,7 +91,7 @@
 									<option value="newConsole">New console</option>
 								</optgroup>
 							</select>
-							<button>Save</button>
+							<button disabled>Save</button>
 							<br>
 						</fieldset>
 					</form>
