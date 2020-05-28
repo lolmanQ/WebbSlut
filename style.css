@@ -668,13 +668,9 @@ body.formPage main section {
   width: 75%;
 }
 
-body.formPage main section h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
 body.formPage main section h2 {
   font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 body.formPage main form textarea {
