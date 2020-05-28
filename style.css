@@ -51,7 +51,7 @@ body {
 Default nav + mobile
 ==================================*/
 nav:not(.local) {
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: nav;
@@ -136,7 +136,7 @@ section{
 	}
 }*/
 section.local {
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: localNav;
   background-color: rgba(145, 145, 145, 0.39);
@@ -220,7 +220,7 @@ nav screen size
 Footer
 ==================================*/
 footer {
-  -ms-grid-row: 3;
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: footer;
@@ -251,12 +251,30 @@ footer a {
   color: white;
 }
 
+/*==================================
+main
+==================================*/
 main {
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: main;
   text-align: center;
+}
+
+/*==================================
+Header
+==================================*/
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: header;
+  text-align: center;
+}
+
+header > h1 {
+  font-size: 2.3em;
 }
 
 /*==================================
@@ -265,9 +283,12 @@ Home page styling
 .homePage .grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'nav nav nav' 'main main main' 'footer footer footer';
-  -ms-grid-rows: auto auto 100px;
-      grid-template-rows: auto auto 100px;
+      grid-template-areas: 'header header header'
+ 'nav nav nav'
+ 'main main main'
+ 'footer footer footer';
+  -ms-grid-rows: auto auto auto 100px;
+      grid-template-rows: auto auto auto 100px;
 }
 
 .homePage main {
@@ -291,14 +312,19 @@ Home page styling
   width: 75%;
 }
 
-.homePage main section h1 {
+.homePage main section h2 {
   font-size: 3rem;
   margin-bottom: 1rem;
   text-shadow: 5px 6px 4px rgba(0, 0, 0, 0.315);
 }
 
-.homePage main section h2 {
+.homePage main section h3 {
   font-size: 2rem;
+  text-shadow: 5px 6px 4px rgba(46, 54, 56, 0.3);
+}
+
+.homePage main section p + p {
+  margin-top: 2.2ex;
 }
 
 @media screen and (min-width: 600px) {
@@ -313,9 +339,13 @@ Game and console page
 .gamePage .grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'nav' 'localNav' 'main' 'footer';
-  -ms-grid-rows: auto auto auto 100px;
-      grid-template-rows: auto auto auto 100px;
+      grid-template-areas: 'header'
+ 'nav'
+ 'localNav'
+ 'main'
+ 'footer';
+  -ms-grid-rows: auto auto auto auto 100px;
+      grid-template-rows: auto auto auto auto 100px;
 }
 
 .gamePage main {
@@ -357,20 +387,23 @@ Game and console page
 
 @media screen and (min-width: 600px) {
   .gamePage .grid-container {
-        grid-template-areas: 'nav nav nav' 'localNav main main' 'footer footer footer';
+        grid-template-areas: 'header header header'
+ 'nav nav nav'
+ 'localNav main main'
+ 'footer footer footer';
     -ms-grid-columns: 250px auto auto;
         grid-template-columns: 250px auto auto;
-    -ms-grid-rows: auto auto 100px;
-        grid-template-rows: auto auto 100px;
+    -ms-grid-rows: auto auto auto 100px;
+        grid-template-rows: auto auto auto 100px;
   }
-  .gamePage main hr {
+  .gamePage .grid-container main hr {
     width: 75%;
   }
-  .gamePage main article {
+  .gamePage .grid-container main article {
     width: calc(90% - 4rem);
     margin: 1rem;
   }
-  .gamePage main article img {
+  .gamePage .grid-container main article img {
     width: 70%;
   }
 }
@@ -432,9 +465,12 @@ Timeline page
 body.timeline .grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'nav' 'main' 'footer';
-  -ms-grid-rows: auto auto 100px;
-      grid-template-rows: auto auto 100px;
+      grid-template-areas: 'header'
+ 'nav'
+ 'main'
+ 'footer';
+  -ms-grid-rows: auto auto auto 100px;
+      grid-template-rows: auto auto auto 100px;
 }
 
 body.timeline main article.box {
@@ -486,13 +522,35 @@ body.timeline main article.box table thead tr:nth-child(1) {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+body.timeline main article.box figure {
+  width: calc(100% - 2rem);
+  margin: 1rem;
+  margin-top: 0;
+}
+
+body.timeline main article.box figure img {
+  width: 100%;
+}
+
+body.timeline main article.box iframe {
+  width: calc(100% - 2rem);
+  height: 300px;
+  margin: 1rem;
+}
+
+body.timeline main article.box video {
+  margin: 1rem;
+  width: calc(100% - 2rem);
+  height: auto;
+}
+
 @media screen and (min-width: 600px) {
   body.timeline nav.local {
     z-index: 2;
     -webkit-transition: ease all .5s;
     transition: ease all .5s;
     position: fixed;
-    top: 100px;
+    top: 175px;
     left: 50px;
     background-color: rgba(7, 7, 7, 0.37);
     border-radius: 5%;
@@ -571,6 +629,11 @@ body.timeline main article.box table thead tr:nth-child(1) {
   body.timeline main article.box table th, body.timeline main article.box table td {
     min-width: 75px;
   }
+  body.timeline main article.box video {
+    margin: 1rem;
+    width: calc(100% - 2rem);
+    height: auto;
+  }
   body.timeline main > hr {
     width: calc(75vw - 2px);
   }
@@ -602,9 +665,12 @@ Contribute page
 body.formPage .grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'nav nav nav' 'main main main' 'footer footer footer';
-  -ms-grid-rows: auto auto 100px;
-      grid-template-rows: auto auto 100px;
+      grid-template-areas: 'header header header'
+ 'nav nav nav'
+ 'main main main'
+ 'footer footer footer';
+  -ms-grid-rows: auto auto auto 100px;
+      grid-template-rows: auto auto auto 100px;
 }
 
 body.formPage main {
@@ -628,13 +694,9 @@ body.formPage main section {
   width: 75%;
 }
 
-body.formPage main section h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
 body.formPage main section h2 {
   font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 body.formPage main form textarea {
@@ -650,6 +712,10 @@ body.formPage main form #set1 {
   text-align: left;
 }
 
+body.formPage main form #set2 input[type="text"] {
+  text-align: center;
+}
+
 body.formPage main form :invalid {
   border: 2px solid red;
   border-radius: 5%;
@@ -661,6 +727,10 @@ body.formPage main form :optional {
 
 body.formPage main form :invalid::after {
   content: "Not all required field are filled";
+}
+
+body.formPage main form select :checked {
+  background-color: #a7a7a7;
 }
 
 @media screen and (min-width: 600px) {

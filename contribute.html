@@ -4,10 +4,13 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="style.css">
-		<title>help contribute</title>
+		<title>Help contribute</title>
 	</head>
 	<body class="formPage">
 		<div class="grid-container">
+			<header>
+				<h1>Contribute</h1>
+			</header>
 			<nav>
 				<ul>
 					<li><a href="./games.html">Games</a></li>
@@ -17,12 +20,12 @@
 			</nav>
 			<main>
 				<section>
-					<h1>Here you can help to expand your knowlage</h1>
+					<h2>Here you can help to expand your knowlage</h1>
 					<p>To help you just need to submit some information in the form below</p>
 					<hr/>
 				</section>
 				<section>
-					<form action="" method="GET"><!--har inte något i action eftersom att det finns inget upsat för att ta hand om requestet-->
+					<form action="/index.html" method="post"><!--har inte något i action eftersom att det finns inget upsat för att ta hand om requestet-->
 						<fieldset id="set1">
 							<legend>Personal information</legend>
 							<label for="name">Name:</label><br>
@@ -57,10 +60,10 @@
 							</datalist>
 		
 							<label for="aboutYou">About you:</label><br>
-							<textarea name="aboutYou" id="aboutYou" style="resize: none;"></textarea><br>
+							<textarea name="aboutYou" id="aboutYou"></textarea><br>
 							<label for="saveInfo">Keep info:</label>
-							<input type="checkbox" name="saveInfo" id="saveInfo"><br>
-							<button disabled>Save</button>
+							<input type="checkbox" name="saveInfo" id="saveInfo" checked><br>
+							<button type="submit" disabled>Save</button>
 						</fieldset>
 
 						<fieldset id="set2">
@@ -82,7 +85,7 @@
 							<select name="categorys" id="categorys">
 								<optgroup label="Games">
 									<option value="oldGame">Vintege game</option>
-									<option value="lastGengame">Last gen game</option>
+									<option value="lastGengame" selected>Last gen game</option>
 									<option value="newGame">New game</option>
 								</optgroup>
 								<optgroup label="Consoles">
@@ -91,7 +94,7 @@
 									<option value="newConsole">New console</option>
 								</optgroup>
 							</select>
-							<button disabled>Save</button>
+							<button type="submit" disabled>Save</button>
 							<br>
 						</fieldset>
 					</form>
