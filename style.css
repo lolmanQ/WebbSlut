@@ -707,6 +707,10 @@ body.formPage main form :invalid::after {
   content: "Not all required field are filled";
 }
 
+body.formPage main form select :checked {
+  background-color: #a7a7a7;
+}
+
 @media screen and (min-width: 600px) {
   body.formPage main section {
     width: 50%;
