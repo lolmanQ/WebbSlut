@@ -554,10 +554,13 @@ body.timeline main article.box table thead tr:nth-child(1) {
   }
   body.timeline main article.box figure {
     width: 50%;
+    height: 100%;
     margin: 1rem;
     margin-top: 0;
   }
   body.timeline main article.box figure img {
+    -o-object-fit: cover;
+       object-fit: cover;
     width: 100%;
   }
   body.timeline main article.box iframe {
