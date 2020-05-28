@@ -189,11 +189,26 @@ footer{
 }
 
 
+/*==================================
+main
+==================================*/
 
 main{
 	grid-area: main;
 	text-align: center;
 }
+
+/*==================================
+Header
+==================================*/
+header{
+	grid-area: header;
+	text-align: center;
+	>h1{
+		font-size: 2.3em;
+	}
+}
+
 
 /*==================================
 Home page styling
@@ -203,10 +218,11 @@ Home page styling
 	.grid-container{
 		display: grid;
 		grid-template-areas: 
+			'header header header'
 			'nav nav nav'
 			'main main main'
 			'footer footer footer';
-		grid-template-rows: auto auto 100px;
+		grid-template-rows: auto auto auto 100px;
 	}
 	main{
 		display: flex;
@@ -217,13 +233,17 @@ Home page styling
 		section{
 			margin-top: 25px;
 			width: 75%;
-			h1{
+			h2{
 				font-size: 3rem;
 				margin-bottom: 1rem;
 				text-shadow: 5px 6px 4px rgba(0, 0, 0, 0.315);
 			}
-			h2{
+			h3{
 				font-size: 2rem;
+				text-shadow: 5px 6px 4px hsla(190,10%,20%,0.3);
+			}
+			p+p{
+				margin-top: 2.2ex;
 			}
 		}
 		
@@ -246,12 +266,13 @@ Game and console page
 .gamePage{
 	.grid-container{
 		display: grid;
-		grid-template-areas: 
+		grid-template-areas:
+		'header'
 		'nav'
 		'localNav'
 		'main'
 		'footer';
-		grid-template-rows: auto auto auto 100px;
+		grid-template-rows: auto auto auto auto 100px;
 	}
 
 	main{
@@ -283,21 +304,23 @@ Game and console page
 	.gamePage{
 		.grid-container{
 			grid-template-areas: 
-		'nav nav nav'
-		'localNav main main'
-		'footer footer footer';
-		grid-template-columns: 250px auto auto;
-		grid-template-rows: auto auto 100px;
-		}
-		main{
-			hr{
-				width: 75%;
-			}
-			article{
-				width: calc(90% - 4rem);
-				margin: 1rem;
-				img{
-					width: 70%;
+				'header header header'
+				'nav nav nav'
+				'localNav main main'
+				'footer footer footer';
+			grid-template-columns: 250px auto auto;
+			grid-template-rows: auto auto auto 100px;
+			
+			main{
+				hr{
+					width: 75%;
+				}
+				article{
+					width: calc(90% - 4rem);
+					margin: 1rem;
+					img{
+						width: 70%;
+					}
 				}
 			}
 		}
@@ -348,10 +371,11 @@ body.timeline{
 	.grid-container{
 		display: grid;
 		grid-template-areas: 
+		'header'
 		'nav'
 		'main'
 		'footer';
-		grid-template-rows: auto auto 100px;
+		grid-template-rows: auto auto auto 100px;
 	}
 	main{
 		article.box{
@@ -390,6 +414,24 @@ body.timeline{
 					background-color: rgba(0, 0, 0, 0.4);
 				}
 			}
+			figure{
+				width: calc(100% - 2rem);
+				margin: 1rem;
+				margin-top: 0;
+				img{
+					width: 100%;
+				}
+			}
+			iframe{
+				width: calc(100% - 2rem);
+				height: 300px;
+				margin: 1rem;
+			}
+			video{
+				margin: 1rem;
+				width: calc(100% - 2rem);
+				height: auto;
+			}
 		}
 	}
 }
@@ -400,7 +442,7 @@ body.timeline{
 			z-index: 2;
 			transition: ease all .5s;
 			position: fixed;
-			top:100px;
+			top: 175px;
 			left: 50px;
 			background-color: rgba(7, 7, 7, 0.37);
 			border-radius: 5%;
@@ -462,6 +504,11 @@ body.timeline{
 						min-width: 75px;
 					}
 				}
+				video{
+					margin: 1rem;
+					width: calc(100% - 2rem);
+					height: auto;
+				}
 			}
 			>hr{
 				width: calc(75vw - 2px);
@@ -500,11 +547,12 @@ Contribute page
 body.formPage{
 	.grid-container{
 		display: grid;
-		grid-template-areas: 
+		grid-template-areas:
+			'header header header'
 			'nav nav nav'
 			'main main main'
 			'footer footer footer';
-		grid-template-rows: auto auto 100px;
+		grid-template-rows: auto auto auto 100px;
 	}
 	main{
 		display: flex;
@@ -535,7 +583,9 @@ body.formPage{
 				text-align: left;
 			}
 			#set2{
-
+				input[type="text"]{
+					text-align: center;
+				}
 			}
 			:invalid{
 				border: 2px solid red;
