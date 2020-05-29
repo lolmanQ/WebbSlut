@@ -107,6 +107,15 @@ nav ul li:hover {
           transform: scale(1.2);
 }
 
+nav ul li.active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+nav ul li.active > a {
+  text-shadow: 4px 3px 0px rgba(32, 32, 32, 0.507);
+}
+
 /*
 section{
 	grid-area: localNav;

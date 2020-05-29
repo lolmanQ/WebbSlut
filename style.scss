@@ -79,7 +79,13 @@ nav{
         }
         li:hover{
             transform: scale(1.2);
-        }
+		}
+		li.active{
+			transform: scale(1.1);
+			>a{
+				text-shadow: 4px 3px 0px rgba(32, 32, 32, 0.507);
+			}
+		}
 	}
 }
 
